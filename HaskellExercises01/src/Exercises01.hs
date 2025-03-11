@@ -23,7 +23,7 @@ import Prelude hiding (last,init,(!!))
 --    SUBMITTING, FAILURE TO DO SO WILL RESULT IN A MARK OF 0
 -- 4) REPLACE macid = "TODO" WITH YOUR ACTUAL MACID (EX. IF YOUR MACID IS jim THEN macid = "jim")
 -----------------------------------------------------------------------------------------------------------
-macid = "TODO"
+macid = "murat"
 
 -- NOTE: THE PRELUDE FUNCTIONS YOU'RE REQUIRED TO IMPLEMENT HAVE BEEN REMOVED, HOWEVER OTHER PRELUDE
 --       FUNCTIONS ARE STILL AVAILABLE, E.I. drop,take,reverse,head,tail,length,div
@@ -35,7 +35,9 @@ macid = "TODO"
 -- other available Prelude functions
 -----------------------------------------------------------------------------------------------------------
 last :: [a] -> a
-last xs = error "TODO implement init"
+last xs = head (reverse xs)
+
+mine xs = head (tail xs)
 
 -- Exercise B
 -----------------------------------------------------------------------------------------------------------
@@ -43,7 +45,17 @@ last xs = error "TODO implement init"
 -- combination of other available Prelude functions
 -----------------------------------------------------------------------------------------------------------
 init :: [a] -> [a]
-init xs = error "TODO implement init"
+init xs = reverse (tail (reverse xs)) -- does not work for empty list
+
+double :: Int -> Int
+double x = x * 2
+doubleUs x y = double x + double y
+
+doubleSmallNumber x = if x > 100
+                        then x
+                        else x*2 
+doubleSmallNumber' x = (if x > 100 then x else x*2) + 1
+conanO'Brien = "It's a-me, Conan O'Brien!" 
 
 -- Exercise C
 -----------------------------------------------------------------------------------------------------------
